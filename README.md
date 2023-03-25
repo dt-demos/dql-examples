@@ -8,10 +8,13 @@ This is a work in progress repo. If you have examples that you wish to share, pl
 ## Example DQL queries
 * [Events](EVENTS.md)
 * [Logs](LOGS.md)
+* [Gigamon Logs](GIGAMON.md)
 * [Smartscape](SMARTSCAPE.md)
+* [Metrics](METRICS.md)
 * [Misc](MISC.md)
-* [Gigamon](GIGAMON.md)
-* [Github repo with more Logs Examples](https://github.com/Dynatrace-Asad-Ali/DQL-Examples)
+
+## More Example repos
+* [Dynatrace-Asad-Ali Logs Examples](https://github.com/Dynatrace-Asad-Ali/DQL-Examples)
 
 ### DQL Assets to get up to speed
 * [Dynatrace Documentation](https://www.dynatrace.com/support/help/observe-and-explore/query-data/dynatrace-query-language)
