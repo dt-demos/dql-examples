@@ -14,7 +14,8 @@ This is a work in progress repo. If you have examples that you wish to share, pl
 * [Misc](MISC.md)
 
 ## More Example repos
-* [Dynatrace-Asad-Ali Logs Examples](https://github.com/Dynatrace-Asad-Ali/DQL-Examples)
+* [Dynatrace-Asad-Ali Log Examples](https://github.com/Dynatrace-Asad-Ali/DQL-Examples)
+* [Dynatrace help Log examples](https://www.dynatrace.com/support/help/observe-and-explore/logs/log-management-and-analytics/logs-on-grail-examples)
 
 ### DQL Assets to get up to speed
 * [Dynatrace Documentation](https://www.dynatrace.com/support/help/observe-and-explore/query-data/dynatrace-query-language)
