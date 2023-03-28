@@ -1,18 +1,16 @@
-# alias columns within summarize command
 
+## Error rate
+​
 ```
 fetch logs
-| filter isNotNull(bgp_as)
-| summarize count=count(), by: {bgp_status=bgp_message_type, bgp_neighbors=bgp_as}
-| fields bgp_neighbors, bgp_status, count 
-| sort count desc
+| fieldsAdd errors = toLong(loglevel == "ERROR")
+| summarize errorRate = sum(errors)/count() * 100
 ```
 
-# group counts by formatted day
+## group counts by formatted day
 
 ```
 fetch logs, from:-6d
-| filter vendor == "Gigamon"
 | summarize count(), by:{Day=formatTimestamp(bin(timestamp, 1d), format:"MM-dd-YYYY")}, alias: logCount
 | fields Day, logCount
 | sort Day
@@ -32,4 +30,16 @@ fetch logs, from:-6d
 | summarize count(), by:{Day=formatTimestamp(bin(timestamp, 1d), format:"MM-dd-YYYY")}, alias: logCount
 | fields Day, logCount
 | sort Day
+```
+
+## Parse our error descriptions and get a count for each
+```
+fetch logs
+| filter k8s.namespace.name=="prod" and loglevel=="ERROR"
+| filter k8s.deployment.name=="frontend-*"
+| filter contains(content, "credit card", caseSensitive: FALSE)
+| parse content, "LD'code = Code('INTEGER:errorCode')'"
+| parse content, "LD'Code('LD'desc = 'LD:errorDesc'{'"
+| fields timestamp, errorCode, errorDesc
+| summarize Count = count(), by: {errorCode, errorDesc}
 ```

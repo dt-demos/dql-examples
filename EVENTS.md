@@ -1,10 +1,18 @@
 ## List of distinct event kinds
-
 ```
 fetch events
-| summarize count(), by: {event.kind}
-| fields event.kind
+| summarize count=count(), by: {event.kind}
+| fields event.kind, count
 | sort event.kind
+```
+
+## Count of unique BIZ_EVENTs
+```
+fetch events
+| filter event.kind == "BIZ_EVENT"
+| summarize count=count(), by: {event.kind, event.type, event.group_label}
+| fields event.type, count
+| sort count desc
 ```
 
 ## Count of unique event types by event kind

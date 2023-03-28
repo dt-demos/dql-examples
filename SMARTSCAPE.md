@@ -1,5 +1,13 @@
-# smartscape
+## Get a count error logs by host.  For those hosts processing search journey transactions
+```
+fetch bizevents, from:-30m
+| summarize search_events = countIf(event.type == "com.easytravel.search-journey"), by:dt.entity.host
+| lookup [fetch logs
+                 | summarize count = countIf(loglevel=="ERROR"), by:dt.entity.host
+         ], sourceField:dt.entity.host, lookupField:dt.entity.host, prefix:"logs.err."
+```
 
+## Get a count of DAVIS problems and count of logs of type ERROR for a specified host
 ```
 fetch dt.entity.host
 | filter entityId == "HOST-29627D3DC19AD2DA"

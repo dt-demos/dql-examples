@@ -1,6 +1,8 @@
-These are example that work in [Gigamon Demo Environment](https://tfp52389.live.dynatrace.com) with JSON logs generated from their network simulator.
+# Gigamon
 
-These DQL queries are also behind the examples in this [Gigamon blog](https://blog.gigamon.com/2023/02/14/deep-observability-with-gigamon-and-dynatrace/)
+Example DQL statements for the Gigamon demo environment where JSON logs are generated from their network simulator.  These DQL queries are also behind the examples in this [Gigamon blog](https://blog.gigamon.com/2023/02/14/deep-observability-with-gigamon-and-dynatrace/)
+
+![image](images/gigamon.png) 
 
 # CloudOps
 
