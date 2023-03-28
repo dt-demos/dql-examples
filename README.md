@@ -8,10 +8,13 @@ This is a work in progress repo. If you have examples that you wish to share, pl
 ## Example DQL queries
 * [Events](EVENTS.md)
 * [Logs](LOGS.md)
-* [Gigamon Logs](GIGAMON.md)
 * [Smartscape](SMARTSCAPE.md)
 * [Metrics](METRICS.md)
 * [Misc](MISC.md)
+
+## Demo Applications
+* [Dynatrace EasyTrade](EASYTRADE.md)
+* [Gigamon Logs](GIGAMON.md)
 
 ## More Example repos
 * [Dynatrace-Asad-Ali Log Examples](https://github.com/Dynatrace-Asad-Ali/DQL-Examples)
